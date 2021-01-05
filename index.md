@@ -1,37 +1,10 @@
-## Welcome to GitHub Pages
+# Dijkstra's Algorithm 
 
-You can use the [editor on GitHub](https://github.com/eqchee/dijkstra/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## About The Project
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+In a country with multiple towns connected by numerous bidirectional roads, only a few towns  have a voting station. Each citizen would start with a green card to allow them to travel and they would like to travel to a voting station in minimal time. Each time a citizen travels from one town to another and if the two towns are hostile, the green card would be downgraded to orange card, or the orange card would be downgraded to red card. To upgrade from a red card to orange card or from orange card to green card, each city would have their own processing time. If the two towns are friendly, there is no change to the card.  It is only possible to travel with a green or orange card. If a citizen receives a red card, he/she must upgrade his/her card to either orange or green before being able to leave for the next town. To enter the voting station, the citizen must have a green card.
 
-### Markdown
+This algorithm has been designed to determine the path with minimum travelling time required to reach a voting station from each town in the country by modifying Dijkstra's algorithm:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/eqchee/dijkstra/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+1.  Set towns with voting station to be sources, ie. cost to be 0
+2. For each town (vertex), split it into 3 sub-vertices to account for all possible permutations of card downgrade/upgrade(s)
